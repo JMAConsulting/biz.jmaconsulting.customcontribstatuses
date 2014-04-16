@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <extension key="biz.jmaconsulting.customcontribstatuses" type="module">
   <file>customcontribstatuses</file>
-  <name>FIXME</name>
+  <name>Custom Contribution Status</name>
   <description>Allows user to change contribution status from non-core to core.</description>
   <license>AGPL-3.0</license>
   <maintainer>
