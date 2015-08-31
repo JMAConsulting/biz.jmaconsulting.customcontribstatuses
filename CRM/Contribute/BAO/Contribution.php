@@ -160,7 +160,9 @@ class CRM_Contribute_BAO_Contribution extends CRM_Contribute_DAO_Contribution {
         $setPrevContribution = FALSE;
       }
     }
-
+    if ($contributionID && $setPrevContribution) {
+      $params['prevContribution'] = self::getValues(array('id' => $contributionID), CRM_Core_DAO::$_nullArray, CRM_Core_DAO::$_nullArray);
+    }
     if ($contributionID) {
       CRM_Utils_Hook::pre('edit', 'Contribution', $contributionID, $params);
     }
@@ -175,10 +177,6 @@ class CRM_Contribute_BAO_Contribution extends CRM_Contribute_DAO_Contribution {
     if (!CRM_Utils_Rule::currencyCode($contribution->currency)) {
       $config = CRM_Core_Config::singleton();
       $contribution->currency = $config->defaultCurrency;
-    }
-
-    if ($contributionID && $setPrevContribution) {
-      $params['prevContribution'] = self::getValues(array('id' => $contributionID), CRM_Core_DAO::$_nullArray, CRM_Core_DAO::$_nullArray);
     }
 
     $result = $contribution->save();
@@ -3170,8 +3168,9 @@ WHERE  contribution_id = %1 ";
       'In Progress' => array('Cancelled', 'Completed', 'Failed'),
       'Refunded' => array('Cancelled', 'Completed'),
     );
-
-    if (!in_array($contributionStatuses[$fields['contribution_status_id']], $checkStatus[$contributionStatuses[$values['contribution_status_id']]])) {
+    
+    if (!in_array($contributionStatuses[$fields['contribution_status_id']],
+      CRM_Utils_Array::value($contributionStatuses[$values['contribution_status_id']], $checkStatus, array()))) {
       $errors['contribution_status_id'] = ts("Cannot change contribution status from %1 to %2.", array(
         1 => $contributionStatuses[$values['contribution_status_id']],
         2 => $contributionStatuses[$fields['contribution_status_id']],
