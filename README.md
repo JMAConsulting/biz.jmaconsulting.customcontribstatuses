@@ -1,4 +1,4 @@
-biz.jmaconsulting.customcontribstatuses version 1.0 for CiviCRM 4.4
+biz.jmaconsulting.customcontribstatuses version 1.2 for CiviCRM 4.7
 ==============================================================
 
 Custom Contribution Status allows user to change contribution status from non-core to core.
