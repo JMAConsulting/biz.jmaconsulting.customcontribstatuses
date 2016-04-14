@@ -99,6 +99,8 @@ function contributionStatusChange($oldStatus, $newStatus) {
     'In Progress',
     'Overdue',
     'Refunded',
+    'Partially paid',
+    'Pending refund',
   );
   
   $contributionStatuses = CRM_Contribute_PseudoConstant::contributionStatus(NULL, 'name');
