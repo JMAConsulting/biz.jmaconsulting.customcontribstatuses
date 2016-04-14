@@ -15,3 +15,7 @@ Installation instructions for Custom Contribution Status
   * If you have not already done so, go to Administer >> System Settings >> Resource URLs
     * Beside Extension Resource URL, enter an appropriate values such as http://yourorg.org/sites/all/modules/Extensions/
   * Click Save.
+* Enable the Extension
+  * Navigate to Administer > System Settings > Extensions.
+  * Click Add New tab.
+  * Click Download and Install button.
