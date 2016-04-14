@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <extension key="biz.jmaconsulting.customcontribstatuses" type="module">
-  <downloadUrl>https://github.com/JMAConsulting/biz.jmaconsulting.customcontribstatuses/archive/v1.1.zip</downloadUrl>
+  <downloadUrl>https://github.com/JMAConsulting/biz.jmaconsulting.customcontribstatuses/archive/v1.2.zip</downloadUrl>
   <file>customcontribstatuses</file>
   <name>Custom Contribution Status</name>
   <description>Allows user to change contribution status from non-core to core.</description>
@@ -14,11 +14,11 @@
     <author>JMA Consulting</author>
     <email>joe.murray@jmaconsulting.biz</email>
   </maintainer>
-  <releaseDate>2014-04-16</releaseDate>
-  <version>1.1</version>
+  <releaseDate>2016-04-14</releaseDate>
+  <version>1.2</version>
   <develStage>stable</develStage>
   <compatibility>
-    <ver>4.6</ver>
+    <ver>4.7</ver>
   </compatibility>
   <comments></comments>
   <civix>
