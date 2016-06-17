@@ -70,7 +70,7 @@ function customcontribstatuses_civicrm_managed(&$entities) {
 }
 
 
-function customcontribstatuses_civicrm_validate($formName, &$fields, &$files, &$form) {
+function customcontribstatuses_civicrm_validateForm($formName, &$fields, &$files, &$form, &$errors) {
   if ($formName == 'CRM_Contribute_Form_Contribution' && $form->getVar('_action') == CRM_Core_Action::UPDATE 
     && $form->_defaultValues['contribution_status_id'] != $fields['contribution_status_id']) {
     $contributionStatuses = CRM_Contribute_PseudoConstant::contributionStatus(NULL, 'name');
