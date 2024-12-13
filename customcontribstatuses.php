@@ -15,7 +15,6 @@ function customcontribstatuses_civicrm_config(&$config) {
  * @param $files array(string)
  */
 function customcontribstatuses_civicrm_xmlMenu(&$files) {
-  _customcontribstatuses_civix_civicrm_xmlMenu($files);
 }
 
 /**
@@ -29,7 +28,7 @@ function customcontribstatuses_civicrm_install() {
  * Implementation of hook_civicrm_uninstall
  */
 function customcontribstatuses_civicrm_uninstall() {
-  return _customcontribstatuses_civix_civicrm_uninstall();
+  return;
 }
 
 /**
@@ -43,7 +42,7 @@ function customcontribstatuses_civicrm_enable() {
  * Implementation of hook_civicrm_disable
  */
 function customcontribstatuses_civicrm_disable() {
-  return _customcontribstatuses_civix_civicrm_disable();
+  return;
 }
 
 /**
@@ -56,7 +55,7 @@ function customcontribstatuses_civicrm_disable() {
  *                for 'enqueue', returns void
  */
 function customcontribstatuses_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
-  return _customcontribstatuses_civix_civicrm_upgrade($op, $queue);
+  return;
 }
 
 /**
@@ -66,9 +65,8 @@ function customcontribstatuses_civicrm_upgrade($op, CRM_Queue_Queue $queue = NUL
  * is installed, disabled, uninstalled.
  */
 function customcontribstatuses_civicrm_managed(&$entities) {
-  return _customcontribstatuses_civix_civicrm_managed($entities);
+  return;
 }
-
 
 function customcontribstatuses_civicrm_validateForm($formName, &$fields, &$files, &$form, &$errors) {
   if ($formName == 'CRM_Contribute_Form_Contribution' && $form->getVar('_action') == CRM_Core_Action::UPDATE 
@@ -108,4 +106,12 @@ function contributionStatusChange($oldStatus, $newStatus) {
     return TRUE;
   }
   return FALSE;
+}
+
+/**
+ * Implements hook_civicrm_postInstall().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_postInstall
+ */
+function customcontribstatuses_civicrm_postInstall() {
 }
